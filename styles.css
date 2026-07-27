@@ -258,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     box-shadow: var(--shadow);
     position: absolute;
-    top: 70px;
+    top: 110px;
     left: 0;
     width: 100%;
     z-index: 999;
