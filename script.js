@@ -59,7 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 { src: "images/multi_utility_cupboard.jpg", title: "Multi Utility Cupboard" },
                 { src: "images/ms_powder_coated.jpg", title: "Ms Powder coated Cupboard and Lockers" },
                 { src: "images/ss_apron_lockers.jpg", title: "SS Apron Lockers" },
-                { src: "images/ss_lockers.jpg", title: "SS Lockers" }
+                { src: "images/ss_lockers.jpg", title: "SS Lockers" },
+                { heading: "SS Clean room Furniture" },
+                { src: "images/cross_over_benches.jpg", title: "Cross Over Benches" },
+                { src: "images/ladder.jpg", title: "Ladder" },
+                { src: "images/ss_rack.jpg", title: "SS Rack" },
+                { src: "images/computer_table.jpg", title: "Computer Table" },
+                { src: "images/fix_chair.jpg", title: "Fix Chair" }
             ]
         },
         rubber: {
