@@ -54,7 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         pharma: {
             title: "Pharma & Process-Industry Solutions",
             description: "Our pharmaceutical and process-industry solutions are manufactured under stringent quality controls. We provide specialized mixing tanks, sterile storage vessels, custom piping, and high-precision components that meet ISO 9001 and industry-specific purity standards. Our state-of-the-art clean manufacturing ensures every component is built for safety and longevity.",
-            images: ["images/pharma_detail_1.jpg", "images/pharma_detail_2.jpg"]
+            images: [
+                { src: "images/multi_utility_cupboard.jpg", title: "Multi Utility Cupboard" },
+                { src: "images/ms_powder_coated.jpg", title: "Ms Powder coated Cupboard and Lockers" },
+                { src: "images/ss_apron_lockers.jpg", title: "SS Apron Lockers" },
+                { src: "images/ss_lockers.jpg", title: "SS Lockers" }
+            ]
         },
         rubber: {
             title: "Industrial Rubber Components",
@@ -90,12 +95,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Populate Gallery
                 modalGallery.innerHTML = '';
-                data.images.forEach(imgSrc => {
+                data.images.forEach(item => {
+                    const figure = document.createElement('figure');
+                    figure.className = 'gallery-item';
+                    
                     const img = document.createElement('img');
-                    img.src = imgSrc;
-                    img.alt = data.title;
+                    img.src = typeof item === 'string' ? item : item.src;
+                    img.alt = typeof item === 'string' ? data.title : item.title;
                     img.className = 'modal-gallery-img';
-                    modalGallery.appendChild(img);
+                    figure.appendChild(img);
+                    
+                    if (typeof item === 'object' && item.title) {
+                        const figcaption = document.createElement('figcaption');
+                        figcaption.textContent = item.title;
+                        figcaption.className = 'gallery-caption';
+                        figure.appendChild(figcaption);
+                    }
+                    
+                    modalGallery.appendChild(figure);
                 });
 
                 modal.classList.add('active');
