@@ -938,6 +938,17 @@ h1, h2, h3, h4, h5, h6 {
     gap: 20px;
 }
 
+.gallery-category-heading {
+    grid-column: 1 / -1;
+    font-size: 22px;
+    color: var(--primary);
+    margin: 15px 0 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .gallery-item {
     margin: 0;
     text-align: center;

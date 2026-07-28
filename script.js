@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Pharma & Process-Industry Solutions",
             description: "Our pharmaceutical and process-industry solutions are manufactured under stringent quality controls. We provide specialized mixing tanks, sterile storage vessels, custom piping, and high-precision components that meet ISO 9001 and industry-specific purity standards. Our state-of-the-art clean manufacturing ensures every component is built for safety and longevity.",
             images: [
+                { heading: "Lockers & Cupboards" },
                 { src: "images/multi_utility_cupboard.jpg", title: "Multi Utility Cupboard" },
                 { src: "images/ms_powder_coated.jpg", title: "Ms Powder coated Cupboard and Lockers" },
                 { src: "images/ss_apron_lockers.jpg", title: "SS Apron Lockers" },
@@ -96,6 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Populate Gallery
                 modalGallery.innerHTML = '';
                 data.images.forEach(item => {
+                    if (item.heading) {
+                        const heading = document.createElement('h3');
+                        heading.textContent = item.heading;
+                        heading.className = 'gallery-category-heading';
+                        modalGallery.appendChild(heading);
+                        return;
+                    }
+
                     const figure = document.createElement('figure');
                     figure.className = 'gallery-item';
                     
