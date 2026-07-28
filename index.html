@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles.css?v=2">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body id="top">
     <!-- Header -->
@@ -58,7 +60,7 @@
     <section class="hero">
         <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
             <span class="badge">ISO 9001 Certified Company</span>
             <h1>Custom Industrial Components & Fabrication</h1>
             <p>Built to Your Specification. Serving the pharmaceutical, sugar mill, heavy engineering, and rolling mill sectors with state-of-the-art manufacturing solutions since 2011.</p>
@@ -76,7 +78,7 @@
     <section id="about" class="section about-section">
         <div class="container">
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right">
                     <h4 class="section-subtitle">About Us</h4>
                     <h2 class="section-title">Helping Businesses Achieve Sustainable Growth</h2>
                     <p>Established over 15 years ago in Ghaziabad, <strong>New India Enterprises</strong> has become a trusted name in developing and offering customized, cost-effective industrial solutions tailored to our customers' exact requirements.</p>
@@ -87,7 +89,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> ISO 9001 Quality Systems</li>
                     </ul>
                 </div>
-                <div class="about-stats">
+                <div class="about-stats" data-aos="fade-left">
                     <div class="stat-box">
                         <div class="stat-number">2011</div>
                         <div class="stat-label">Year Established</div>
@@ -119,7 +121,7 @@
             </div>
             <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card" data-service="pharma">
+                <div class="service-card" data-service="pharma" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-img" style="background-image: url('images/pharma.jpg');"></div>
                     <div class="service-content">
                         <h3>Pharma & Process-Industry Solutions</h3>
@@ -128,7 +130,7 @@
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="service-card" data-service="rubber">
+                <div class="service-card" data-service="rubber" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-img" style="background-image: url('images/rubber.jpg');"></div>
                     <div class="service-content">
                         <h3>Industrial Rubber Components</h3>
@@ -137,7 +139,7 @@
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="service-card" data-service="machinery">
+                <div class="service-card" data-service="machinery" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-img" style="background-image: url('images/machinery.jpg');"></div>
                     <div class="service-content">
                         <h3>Machinery, Accessories & Plastic Parts</h3>
@@ -146,7 +148,7 @@
                     </div>
                 </div>
                 <!-- Service 4 -->
-                <div class="service-card" data-service="fabrication">
+                <div class="service-card" data-service="fabrication" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-img" style="background-image: url('images/fabrication.jpg');"></div>
                     <div class="service-content">
                         <h3>Industrial Fabrication</h3>
@@ -155,7 +157,7 @@
                     </div>
                 </div>
                 <!-- Service 5 -->
-                <div class="service-card" data-service="hvac">
+                <div class="service-card" data-service="hvac" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-img" style="background-image: url('images/hvac.jpg');"></div>
                     <div class="service-content">
                         <h3>HVAC & Clean Room Systems</h3>
@@ -171,7 +173,7 @@
     <section id="why-us" class="section why-us-section">
         <div class="container">
             <div class="why-us-grid">
-                <div class="why-us-content">
+                <div class="why-us-content" data-aos="fade-right">
                     <h4 class="section-subtitle">Why Choose Us</h4>
                     <h2 class="section-title">Quality, Precision & Timely Delivery</h2>
                     <p>Our inviolable existence for more than 15 years is a live testimony of our commitment to our clients. We bring expertise and reliability to every project.</p>
@@ -200,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="why-us-cta">
+                <div class="why-us-cta" data-aos="zoom-in" data-aos-delay="200">
                     <div class="cta-box">
                         <h3>Ready to discuss your project?</h3>
                         <p>Send us your specifications and we'll get back to you with a competitive quote.</p>
@@ -258,7 +260,7 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-right">
                     <h4 class="section-subtitle">Get in Touch</h4>
                     <h2 class="section-title">Let's Build Something Great Together</h2>
                     <p>Whether you need custom components or industrial fabrication, our team is ready to deliver.</p>
@@ -295,7 +297,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="contact-form-container">
+                <div class="contact-form-container" data-aos="fade-left">
                     <form id="quoteForm" class="contact-form">
                         <h3>Request a Quote</h3>
                         <div class="form-group">
@@ -378,5 +380,15 @@
     </div>
 
     <script src="script.js?v=2"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
