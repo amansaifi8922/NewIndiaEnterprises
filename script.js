@@ -132,6 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Industrial Fabrication",
             description: "Our core strength lies in heavy industrial steel fabrication. We deliver robust, custom metalworks, structural framework, and large-scale assemblies. Equipped with advanced welding, cutting, and bending machinery, our fabrication unit can handle complex architectural and industrial projects to your exact specifications.",
             images: ["images/fabrication_detail_1.jpg", "images/fabrication_detail_2.jpg"]
+        },
+        hvac: {
+            title: "HVAC & Clean Room Systems",
+            description: "We design, manufacture, and install state-of-the-art HVAC and clean room systems tailored for pharmaceutical, healthcare, and sensitive manufacturing environments. Our solutions ensure strict compliance with air quality and temperature regulation standards, providing optimal environments for your critical operations.",
+            images: []
         }
     };
 
