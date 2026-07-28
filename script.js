@@ -136,7 +136,31 @@ document.addEventListener('DOMContentLoaded', () => {
         hvac: {
             title: "HVAC & Clean Room Systems",
             description: "We design, manufacture, and install state-of-the-art HVAC and clean room systems tailored for pharmaceutical, healthcare, and sensitive manufacturing environments. Our solutions ensure strict compliance with air quality and temperature regulation standards, providing optimal environments for your critical operations.",
-            images: []
+            images: [
+                { src: "images/vrf_system_piping_designing.jpg", title: "VRF System Piping Designing" },
+                { src: "images/copper_piping.jpg", title: "Copper Piping" },
+                { src: "images/nitrile_rubber_insulation.jpg", title: "Nitrile Rubber Insulation" },
+                { src: "images/cassette_ac.jpg", title: "Cassette AC" },
+                { src: "images/ducting.jpg", title: "Ducting" },
+                { src: "images/ahu.jpg", title: "AHU" },
+                { src: "images/gi_ducting.jpg", title: "GI Ducting" },
+                { src: "images/chiller.jpg", title: "Chiller" },
+                { src: "images/ductable_ac.jpg", title: "Ductable AC" },
+                { src: "images/threaded_rods.jpg", title: "Threaded Rods" },
+                { src: "images/fasteners.jpg", title: "Fasteners (Nuts & Bolts)" },
+                { src: "images/fcu_unit.jpg", title: "FCU Unit" },
+                { src: "images/ss_pipes.jpg", title: "SS Pipes" },
+                { src: "images/air_washer.jpg", title: "Air Washer" },
+                { src: "images/gi_coils.jpg", title: "GI Coils" },
+                { src: "images/rooftop_ac_unit.jpg", title: "Rooftop AC Unit" },
+                { src: "images/ecology_unit.jpg", title: "Ecology Unit" },
+                { src: "images/hvls_fan.jpg", title: "HVLS Fan" },
+                { src: "images/fresh_air_unit.jpg", title: "Fresh Air Unit" },
+                { src: "images/butterfly_valve.jpg", title: "Butterfly Valve" },
+                { src: "images/tower_ac.jpg", title: "Tower AC" },
+                { src: "images/centrifugal_blower.jpg", title: "Centrifugal Blower" },
+                { src: "images/air_filtration_unit.jpg", title: "Air Filtration Unit" }
+            ]
         }
     };
 
