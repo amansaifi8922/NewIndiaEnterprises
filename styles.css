@@ -3,7 +3,7 @@
    Dual Theme System (Light / Dark Mode) + 3D Glass Morphic Toggle
    Typography: Space Grotesk (Display) + Inter (Body) + JetBrains Mono (Specs)
    Color System: Precision Dark Navy (#070A10) + Electric Cobalt Blue (#3B82F6)
-   Full Mobile Responsive Engine (<768px, <480px)
+   Full Mobile Responsive Engine (<768px, <480px) + Zero Horizontal Overflow Fix
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -84,7 +84,7 @@
     --mesh-opacity: 0.04;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -96,6 +96,9 @@ html {
     background-color: var(--bg-dark);
     color: var(--text-primary);
     transition: var(--theme-transition);
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 body {
@@ -103,19 +106,22 @@ body {
     line-height: 1.6;
     background-color: var(--bg-dark);
     color: var(--text-primary);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     transition: var(--theme-transition);
 }
 
-/* Subtle Industrial Background Mesh */
+/* FIX: Subtle Industrial Background Mesh - Using 100% instead of 100vw to eliminate right scrollbar bug */
 body::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100% !important;
+    height: 100% !important;
     background-image: 
         radial-gradient(circle at 15% 15%, var(--accent-glow) 0%, transparent 40%),
         radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
@@ -133,6 +139,7 @@ body::before {
     padding: 0 24px;
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 /* Typography */
@@ -143,11 +150,19 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.15;
     letter-spacing: -0.02em;
     transition: color 0.3s ease;
+    word-break: break-word;
+}
+
+p, span, a, li {
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .section {
     padding: 100px 0;
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .section-subtitle {
@@ -161,6 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    max-width: 100%;
 }
 
 .section-subtitle::before {
@@ -217,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid transparent;
     transition: var(--transition-fast);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
 }
 
 .btn-primary {
@@ -420,6 +437,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     height: 76px;
     z-index: 1000;
     background-color: var(--bg-glass);
@@ -439,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
 .logo a {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     text-decoration: none;
 }
 
@@ -541,6 +559,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 76px;
     left: 0;
     width: 100%;
+    max-width: 100%;
     background-color: var(--bg-surface);
     border-bottom: 1px solid var(--border);
     padding: 24px;
@@ -595,6 +614,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     border-bottom: 1px solid var(--border);
     transition: var(--theme-transition);
+    width: 100%;
 }
 
 .hero-bg {
@@ -634,6 +654,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 860px;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 .badge {
@@ -649,6 +670,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
     font-weight: 500;
     margin-bottom: 24px;
+    max-width: 100%;
 }
 
 .badge::before {
@@ -658,6 +680,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--accent);
     border-radius: 50%;
     box-shadow: 0 0 8px var(--accent);
+    flex-shrink: 0;
 }
 
 /* Crystal Clear White Hero Text in BOTH Light and Dark Modes */
@@ -713,6 +736,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.85);
+    max-width: 100%;
 }
 
 .trust-signal strong {
@@ -727,6 +751,8 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     z-index: 2;
     transition: var(--theme-transition);
+    width: 100%;
+    overflow: hidden;
 }
 
 .ticker-grid {
@@ -762,6 +788,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     background: var(--accent-glow);
     border-radius: var(--radius-sm);
+    flex-shrink: 0;
 }
 
 .ticker-text {
@@ -824,6 +851,7 @@ h1, h2, h3, h4, h5, h6 {
 .check-list i {
     color: var(--accent);
     font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .about-stats {
@@ -1134,6 +1162,7 @@ h1, h2, h3, h4, h5, h6 {
     content: '▪';
     color: var(--accent);
     font-size: 0.8rem;
+    flex-shrink: 0;
 }
 
 /* Contact Section */
@@ -1205,6 +1234,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px;
     box-shadow: var(--shadow-card);
     transition: var(--theme-transition);
+    max-width: 100%;
 }
 
 .contact-form h3 {
@@ -1230,6 +1260,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.95rem;
     outline: none;
     transition: var(--transition-fast);
+    max-width: 100%;
 }
 
 .form-group select {
@@ -1262,6 +1293,8 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--border);
     padding-top: 80px;
     transition: var(--theme-transition);
+    width: 100%;
+    overflow: hidden;
 }
 
 .footer-grid {
@@ -1369,6 +1402,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-contact i {
     color: var(--accent);
+    flex-shrink: 0;
 }
 
 .footer-bottom {
@@ -1386,14 +1420,15 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100% !important;
+    height: 100% !important;
     background-color: rgba(4, 6, 10, 0.85);
     backdrop-filter: blur(12px);
     z-index: 2000;
     align-items: center;
     justify-content: center;
     padding: 24px;
+    box-sizing: border-box;
 }
 
 [data-theme="light"] .modal {
@@ -1545,6 +1580,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+    /* FIX: Disable AOS Offscreen Transforms on Mobile */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
     .section {
         padding: 55px 0;
     }
