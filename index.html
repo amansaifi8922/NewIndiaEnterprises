@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New India Enterprises | Custom Industrial Components & Fabrication</title>
-    <meta name="description" content="New India Enterprises - Custom Industrial Components & Fabrication, Built to Your Specification. Based in Ghaziabad, serving Pharma, Rubber, Machinery & Heavy Engineering industries since 2011.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2">
-    <!-- FontAwesome for Icons -->
+    <meta name="description" content="New India Enterprises: Custom Industrial Components & Fabrication, Built to Your Technical Specifications. Based in Ghaziabad, serving Pharma, Rubber, Machinery & Heavy Engineering industries since 2011.">
+    
+    <!-- Modern Anti-Slop Typography: Space Grotesk + Inter + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=4">
+    
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -17,11 +25,12 @@
     <link rel="apple-touch-icon" href="images/favicon.jpg">
 </head>
 <body id="top">
+
     <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="#">
+                <a href="#top">
                     <img src="https://plain-apac-prod-public.komododecks.com/202607/27/biiz2qrnlYL4n0t2xMB1/image.png" alt="NIE Logo" class="logo-img">
                     <div class="logo-content">
                         <div class="logo-text">New India <span>Enterprises</span></div>
@@ -33,13 +42,23 @@
                 <ul>
                     <li><a href="#top">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Capabilities</a></li>
                     <li><a href="#why-us">Why Us</a></li>
-                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#clients">Buyers</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="#contact" class="btn btn-primary">Get Quote</a>
+                <!-- Liquid Glass Theme Toggle Button -->
+                <button id="themeToggle" class="glass-theme-toggle" aria-label="Toggle Light and Dark Theme" title="Toggle Light/Dark Mode">
+                    <span class="toggle-track-text text-dark">Dark</span>
+                    <span class="glass-knob">
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                    </span>
+                    <span class="toggle-track-text text-light">Light</span>
+                </button>
+                
+                <a href="#contact" class="btn btn-primary">Request Quote</a>
             </div>
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
@@ -53,11 +72,22 @@
         <ul>
             <li><a href="#top">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Capabilities</a></li>
             <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#clients">Clients</a></li>
+            <li><a href="#clients">Buyers</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="mobile-toggle-wrapper">
+            <span style="font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;">Switch Appearance:</span>
+            <button id="mobileThemeToggle" class="glass-theme-toggle" aria-label="Toggle Theme Mobile">
+                <span class="toggle-track-text text-dark">Dark</span>
+                <span class="glass-knob">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                </span>
+                <span class="toggle-track-text text-light">Light</span>
+            </button>
+        </div>
     </div>
 
     <!-- Hero Section -->
@@ -65,108 +95,143 @@
         <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <span class="badge">ISO 9001 Certified Company</span>
-            <h1>Custom Industrial Components & Fabrication</h1>
-            <p>Built to Your Specification. Serving the pharmaceutical, sugar mill, heavy engineering, and rolling mill sectors with state-of-the-art manufacturing solutions since 2011.</p>
+            <span class="badge">ISO 9001:2015 Certified Manufacturer</span>
+            <h1>Custom Industrial Components & Heavy Engineering</h1>
+            <p>Precision-machined parts, sterile pharma equipment, custom rubber molds, and heavy fabrication built to exact technical specifications since 2011.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary btn-large">Get a Quote</a>
-                <a href="#services" class="btn btn-secondary btn-large">View Our Services</a>
+                <a href="#contact" class="btn btn-primary btn-large">Get Technical Quote</a>
+                <a href="#services" class="btn btn-secondary btn-large">Explore Capabilities</a>
             </div>
             <div class="trust-signal">
-                <p><strong>15+ Years</strong> of Excellence | <strong>State-of-the-art</strong> Manufacturing Unit</p>
+                <p><strong>15+ Years</strong> Engineering Experience &nbsp;|&nbsp; <strong>State-of-the-Art</strong> Ghaziabad Unit</p>
             </div>
         </div>
     </section>
+
+    <!-- Metrics Ticker Bar -->
+    <div class="metrics-ticker-bar">
+        <div class="container">
+            <div class="ticker-grid">
+                <div class="ticker-item">
+                    <div class="ticker-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="ticker-text">
+                        <span class="ticker-val">2011</span>
+                        <span class="ticker-lbl">Established</span>
+                    </div>
+                </div>
+                <div class="ticker-item">
+                    <div class="ticker-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="ticker-text">
+                        <span class="ticker-val">ISO 9001</span>
+                        <span class="ticker-lbl">Certified Quality</span>
+                    </div>
+                </div>
+                <div class="ticker-item">
+                    <div class="ticker-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="ticker-text">
+                        <span class="ticker-val">100%</span>
+                        <span class="ticker-lbl">Custom Spec Fit</span>
+                    </div>
+                </div>
+                <div class="ticker-item">
+                    <div class="ticker-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="ticker-text">
+                        <span class="ticker-val">24/7</span>
+                        <span class="ticker-lbl">Engineering Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text" data-aos="fade-right">
-                    <h4 class="section-subtitle">About Us</h4>
-                    <h2 class="section-title">Helping Businesses Achieve Sustainable Growth</h2>
-                    <p>Established over 15 years ago in Ghaziabad, <strong>New India Enterprises</strong> has become a trusted name in developing and offering customized, cost-effective industrial solutions tailored to our customers' exact requirements.</p>
-                    <p>As a leading manufacturer, we leverage today's modern technology and state-of-the-art machinery to maintain unsurpassed quality. Our ISO 9001 certification and on-time deliveries make us a reliable partner for public and private sectors alike.</p>
+                    <span class="section-subtitle">Manufacturing Excellence</span>
+                    <h2 class="section-title">Precision Engineered Solutions for Critical Industries</h2>
+                    <p>Established over 15 years ago in Ghaziabad, <strong>New India Enterprises</strong> has grown into a trusted partner for custom industrial manufacturing and work contracting across India.</p>
+                    <p>We leverage CNC machining, automated welding, and specialized tooling to deliver products according to sample drawings or exact tolerance specifications for public and private sector buyers.</p>
                     <ul class="check-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Manufacturer & Work Contractor</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Customized Products based on Samples/Drawings</li>
-                        <li><i class="fa-solid fa-circle-check"></i> ISO 9001 Quality Systems</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Manufacturer & Registered Work Contractor</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Custom Fabrication from Technical Drawings & Samples</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Strict ISO 9001 Quality System Compliance</li>
                     </ul>
                 </div>
                 <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-box">
-                        <div class="stat-number">2011</div>
-                        <div class="stat-label">Year Established</div>
-                    </div>
                     <div class="stat-box highlight">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Operating</div>
+                    </div>
+                    <div class="stat-box">
                         <div class="stat-number">ISO</div>
-                        <div class="stat-label">9001 Certified</div>
+                        <div class="stat-label">9001 Systems</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-number">100%</div>
-                        <div class="stat-label">Customizable</div>
+                        <div class="stat-label">Specification Fit</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Client Support</div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Active Buyers</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services / Bento Section -->
     <section id="services" class="section bg-light services-section">
         <div class="container">
             <div class="section-header center">
-                <h4 class="section-subtitle">Our Expertise</h4>
-                <h2 class="section-title">Industrial Solutions & Services</h2>
-                <p class="section-desc">We manufacture a wide range of top-quality products to cater to various industrial sectors.</p>
+                <h2 class="section-title">Industrial Capabilities & Product Solutions</h2>
+                <p class="section-desc">Click any category below to view detailed specifications and catalog images.</p>
             </div>
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Bento Card 1 -->
                 <div class="service-card" data-service="pharma" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-img" style="background-image: url('images/pharma.jpg');"></div>
                     <div class="service-content">
-                        <h3>Pharma & Process-Industry Solutions</h3>
-                        <p>Specialized equipment, tanks, and components designed for the stringent requirements of pharmaceutical and process industries.</p>
-                        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <h3>Pharma & Process Equipment</h3>
+                        <p>SS cleanroom furniture, sterile storage tanks, crossover benches, die punch cabinets, and precision process accessories built to GMP standards.</p>
+                        <div class="learn-more">Explore Specs & Catalog <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <!-- Service 2 -->
+                <!-- Bento Card 2 -->
                 <div class="service-card" data-service="rubber" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-img" style="background-image: url('images/rubber.jpg');"></div>
                     <div class="service-content">
-                        <h3>Industrial Rubber Components</h3>
-                        <p>High-quality customized rubber parts, seals, and gaskets manufactured for durability and precise industrial applications.</p>
-                        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <h3>Industrial Rubber Parts</h3>
+                        <p>Custom molded seals, high-temp silicone gaskets, o-rings, and heavy rolling mill rubber components for demanding operations.</p>
+                        <div class="learn-more">Explore Specs & Catalog <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <!-- Service 3 -->
+                <!-- Bento Card 3 -->
                 <div class="service-card" data-service="machinery" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-img" style="background-image: url('images/machinery.jpg');"></div>
                     <div class="service-content">
-                        <h3>Machinery, Accessories & Plastic Parts</h3>
-                        <p>Precision-engineered machinery parts, accessories, and durable plastic components crafted for modern heavy engineering.</p>
-                        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <h3>Machinery & Plastics</h3>
+                        <p>Precision CNC machined accessories, wear-resistant engineering plastic parts, and custom mechanical sub-assemblies.</p>
+                        <div class="learn-more">Explore Specs & Catalog <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <!-- Service 4 -->
+                <!-- Bento Card 4 -->
                 <div class="service-card" data-service="fabrication" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-img" style="background-image: url('images/fabrication.jpg');"></div>
                     <div class="service-content">
-                        <h3>Industrial Fabrication</h3>
-                        <p>Expert industrial fabrication services delivering robust, customized metalworks and structural solutions to exact specifications.</p>
-                        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <h3>Heavy Structural Fabrication</h3>
+                        <p>Custom metalworks, steel structures, heavy duty enclosures, pressure vessels, and specialized contracting fabrication.</p>
+                        <div class="learn-more">Explore Specs & Catalog <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <!-- Service 5 -->
+                <!-- Bento Card 5 -->
                 <div class="service-card" data-service="hvac" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-img" style="background-image: url('images/hvac.jpg');"></div>
                     <div class="service-content">
                         <h3>HVAC & Clean Room Systems</h3>
-                        <p>State-of-the-art HVAC and clean room solutions engineered for precise temperature control and rigorous air quality compliance.</p>
-                        <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <p>Complete GI ducting, AHUs, chillers, VRF piping, cassette units, and controlled environmental systems for industrial plants.</p>
+                        <div class="learn-more">Explore Specs & Catalog <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -178,41 +243,41 @@
         <div class="container">
             <div class="why-us-grid">
                 <div class="why-us-content" data-aos="fade-right">
-                    <h4 class="section-subtitle">Why Choose Us</h4>
-                    <h2 class="section-title">Quality, Precision & Timely Delivery</h2>
-                    <p>Our inviolable existence for more than 15 years is a live testimony of our commitment to our clients. We bring expertise and reliability to every project.</p>
+                    <h2 class="section-title">Built for Precision, Reliability & On-Time Supply</h2>
+                    <p>Our 15+ years of continuous manufacturing serving top pharmaceutical and heavy engineering firms stands as proof of our commitment.</p>
                     
                     <div class="feature-item">
                         <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
                         <div class="feature-text">
-                            <h4>State-of-the-Art Manufacturing</h4>
-                            <p>Our units are empowered with the latest machinery to ensure high-precision and best quality outputs.</p>
+                            <h4>Modern Machinery Infrastructure</h4>
+                            <p>Our Ghaziabad facility is equipped with automated metalworking, precision cutting, and molding gear for repeatable quality.</p>
                         </div>
                     </div>
                     
                     <div class="feature-item">
                         <div class="feature-icon"><i class="fa-solid fa-pen-ruler"></i></div>
                         <div class="feature-text">
-                            <h4>Customization & Flexibility</h4>
-                            <p>We develop products strictly according to your requirements, samples, drawings, or specifications.</p>
+                            <h4>Exact Customization</h4>
+                            <p>We manufacture strictly according to client blueprints, physical samples, or custom engineering specifications.</p>
                         </div>
                     </div>
-
+                    
                     <div class="feature-item">
                         <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
                         <div class="feature-text">
-                            <h4>In-Time Deliveries</h4>
-                            <p>Our prompt and reliable delivery schedules help us maintain our position as one of the most trusted partners.</p>
+                            <h4>Strict Delivery Schedules</h4>
+                            <p>Reliable logistics management ensures your production lines never experience downtime due to component delays.</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="why-us-cta" data-aos="zoom-in" data-aos-delay="200">
                     <div class="cta-box">
-                        <h3>Ready to discuss your project?</h3>
-                        <p>Send us your specifications and we'll get back to you with a competitive quote.</p>
-                        <a href="#contact" class="btn btn-primary btn-block">Request a Quote</a>
+                        <h3>Need a Fast Quotation?</h3>
+                        <p>Submit your component drawings or sample details to get an immediate technical proposal.</p>
+                        <a href="#contact" class="btn btn-primary btn-block">Request Technical Quote</a>
                         <a href="https://wa.me/918512800455" target="_blank" class="btn btn-outline btn-block mt-3">
-                            <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
+                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                         </a>
                     </div>
                 </div>
@@ -224,36 +289,35 @@
     <section id="clients" class="section bg-light clients-section">
         <div class="container">
             <div class="section-header center">
-                <h4 class="section-subtitle">Our Valued Buyers</h4>
-                <h2 class="section-title">Trusted by Leading Industries</h2>
-                <p class="section-desc">We cater to both Public & Private Sectors, delivering excellence across domains.</p>
+                <h2 class="section-title">Trusted by Leading Public & Private Enterprises</h2>
+                <p class="section-desc">Delivering specialized industrial components across key sectors nationwide.</p>
             </div>
             <div class="clients-grid">
                 <div class="client-category">
                     <h3>Pharma Industries</h3>
                     <ul>
-                        <li>Unichem Labotries Ltd. (Ghaziabad)</li>
+                        <li>Unichem Laboratories Ltd. (Ghaziabad)</li>
                         <li>Albert David Limited (Ghaziabad)</li>
-                        <li>Sun Pharmaceuticals Industries Ltd. (Gurugram)</li>
-                        <li>Mankind Pharma Ltd. (Himachal Pradesh)</li>
+                        <li>Sun Pharmaceuticals Ltd. (Gurugram)</li>
+                        <li>Mankind Pharma Ltd. (Himachal)</li>
                     </ul>
                 </div>
                 <div class="client-category">
-                    <h3>Rubber Industries</h3>
+                    <h3>Steel & Rubber Industries</h3>
                     <ul>
                         <li>Roll Mill Industries (Noida)</li>
                         <li>Rathi Steel Ltd. (Hapur)</li>
                         <li>Jai Raj Ispat Limited (Hyderabad)</li>
-                        <li>The Rolltech (Tamilnadu)</li>
+                        <li>The Rolltech (Tamil Nadu)</li>
                     </ul>
                 </div>
                 <div class="client-category">
-                    <h3>Machinery & Fabrication</h3>
+                    <h3>Engineering & Contracting</h3>
                     <ul>
-                        <li>G.S Pharmbutor Private Limited (Modinagar)</li>
+                        <li>G.S Pharmbutor Pvt. Ltd. (Modinagar)</li>
                         <li>Radicon Laboratories Ltd. (Noida)</li>
-                        <li>Vyome Therapeutics Limited (New Delhi)</li>
-                        <li>Ashwath Infratech Pvt. Ltd. (New Delhi)</li>
+                        <li>Vyome Therapeutics (New Delhi)</li>
+                        <li>Ashwath Infratech Pvt. Ltd. (Delhi)</li>
                     </ul>
                 </div>
             </div>
@@ -265,69 +329,69 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info" data-aos="fade-right">
-                    <h4 class="section-subtitle">Get in Touch</h4>
-                    <h2 class="section-title">Let's Build Something Great Together</h2>
-                    <p>Whether you need custom components or industrial fabrication, our team is ready to deliver.</p>
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">Start Your Custom Order</h2>
+                    <p>Contact our engineering desk today for technical discussions, custom fabrication estimates, or site visits.</p>
                     
                     <ul class="contact-details">
                         <li>
                             <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div class="text">
-                                <strong>Address</strong>
-                                <span><a href="https://maps.app.goo.gl/wyJeFhTMYXNu6kK5A" target="_blank" rel="noopener noreferrer" class="address-link" style="color: var(--text-main);">KH 1385, Meerut Rd, behind RKGIT College,<br>Raj Nagar Extension, Ghaziabad, Uttar Pradesh 201003</a></span>
+                                <strong>Manufacturing Facility</strong>
+                                <span><a href="https://maps.app.goo.gl/wyJeFhTMYXNu6kK5A" target="_blank" rel="noopener noreferrer">KH 1385, Meerut Rd, behind RKGIT College, Raj Nagar Extension, Ghaziabad, UP 201003</a></span>
                             </div>
                         </li>
                         <li>
                             <div class="icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="text">
-                                <strong>Phone</strong>
-                                <a href="tel:+919350910766">+91 93509 10766</a><br>
-                                <a href="tel:+918512800455">+91 85128 00455</a>
+                                <strong>Direct Phone Desk</strong>
+                                <a href="tel:+919350910766">+91 93509 10766</a> &nbsp;|&nbsp; <a href="tel:+918512800455">+91 85128 00455</a>
                             </div>
                         </li>
                         <li>
                             <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
                             <div class="text">
-                                <strong>WhatsApp</strong>
+                                <strong>WhatsApp Engineering Desk</strong>
                                 <a href="https://wa.me/918512800455" target="_blank">+91 85128 00455</a>
                             </div>
                         </li>
                         <li>
                             <div class="icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="text">
-                                <strong>Email</strong>
+                                <strong>Official Email</strong>
                                 <a href="mailto:newindiaenterprises943@gmail.com">newindiaenterprises943@gmail.com</a>
                             </div>
                         </li>
                     </ul>
                 </div>
+                
                 <div class="contact-form-container" data-aos="fade-left">
                     <form id="quoteForm" class="contact-form">
-                        <h3>Request a Quote</h3>
+                        <h3>Request Technical Proposal</h3>
                         <div class="form-group">
-                            <input type="text" id="quoteName" placeholder="Your Name" required>
+                            <input type="text" id="quoteName" placeholder="Your Name / Organization" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="quoteEmail" placeholder="Your Email" required>
+                            <input type="email" id="quoteEmail" placeholder="Work Email Address" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="quotePhone" placeholder="Your Phone Number" required>
+                            <input type="tel" id="quotePhone" placeholder="Contact Phone Number" required>
                         </div>
                         <div class="form-group">
                             <select id="quoteService" required>
-                                <option value="" disabled selected>Select Service Interest</option>
+                                <option value="" disabled selected>Select Requirement Category</option>
                                 <option value="Pharma & Process Solutions">Pharma & Process Solutions</option>
                                 <option value="Industrial Rubber Components">Industrial Rubber Components</option>
                                 <option value="Machinery & Plastic Parts">Machinery & Plastic Parts</option>
                                 <option value="Industrial Fabrication">Industrial Fabrication</option>
                                 <option value="HVAC & Clean Room Systems">HVAC & Clean Room Systems</option>
-                                <option value="Other / General Inquiry">Other / General Inquiry</option>
+                                <option value="Other / General Inquiry">Other Custom Inquiry</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="quoteDetails" placeholder="Tell us about your requirements..." rows="4" required></textarea>
+                            <textarea id="quoteDetails" placeholder="Describe specifications, drawing details, or required quantities..." rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit Request via WhatsApp</button>
+                        <button type="submit" class="btn btn-primary btn-block">Submit Proposal Request via WhatsApp</button>
                     </form>
                 </div>
             </div>
@@ -342,39 +406,39 @@
                     <img src="https://plain-apac-prod-public.komododecks.com/202607/27/QgH7qKKDLzoeSWXLPPKt/image.jpg" alt="NIE Logo" class="footer-logo-img">
                     <div class="footer-logo-content">New India <span>Enterprises</span></div>
                 </div>
-                <p>Custom Industrial Components & Fabrication, Built to Your Specification. ISO 9001 Certified Quality.</p>
+                <p>Custom Industrial Components & Fabrication, Built to Your Technical Specifications. ISO 9001 Certified Quality Systems.</p>
                 <div class="social-links">
                     <a href="https://wa.me/918512800455" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="mailto:newindiaenterprises943@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#services">Our Capabilities</a></li>
                     <li><a href="#why-us">Why Choose Us</a></li>
-                    <li><a href="#clients">Our Clients</a></li>
+                    <li><a href="#clients">Valued Buyers</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <div style="border-radius: 6px; overflow: hidden; margin-bottom: 20px; height: 140px; border: 1px solid rgba(255,255,255,0.1);">
+                <h4>Ghaziabad Unit</h4>
+                <div style="border-radius: 8px; overflow: hidden; margin-bottom: 20px; height: 140px; border: 1px solid var(--border);">
                     <iframe src="https://maps.google.com/maps?q=Kh.+No.+1385,+Meerut+Rd,+behind+RKGIT+College,+Raj+Nagar+Extension,+Ghaziabad,+Uttar+Pradesh+201003&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <p><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/wyJeFhTMYXNu6kK5A" target="_blank" rel="noopener noreferrer" class="address-link footer-address" style="color: #e2e8f0;">KH 1385, Meerut Rd, behind RKGIT College, Ghaziabad, UP</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/wyJeFhTMYXNu6kK5A" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary);">KH 1385, Meerut Rd, Ghaziabad, UP</a></p>
                 <p><i class="fa-solid fa-phone"></i> +91 93509 10766</p>
                 <p><i class="fa-solid fa-envelope"></i> newindiaenterprises943@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 New India Enterprises. All Rights Reserved. | Ghaziabad, UP</p>
+                <p>&copy; 2026 New India Enterprises. All Rights Reserved. | Industrial Manufacturer & Work Contractor, Ghaziabad, UP</p>
             </div>
         </div>
     </footer>
 
-    <!-- Service Modal -->
+    <!-- Service Detail Modal -->
     <div id="serviceModal" class="modal">
         <div class="modal-content">
             <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
@@ -386,15 +450,14 @@
         </div>
     </div>
 
-    <script src="script.js?v=2"></script>
-    
-    <!-- AOS Animation JS -->
+    <!-- Scripts -->
+    <script src="script.js?v=4"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 700,
             once: true,
-            offset: 100
+            offset: 80
         });
     </script>
 </body>

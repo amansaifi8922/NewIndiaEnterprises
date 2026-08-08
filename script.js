@@ -1,5 +1,29 @@
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle & Theme Switcher
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Dual Theme (Light/Dark) Toggle Logic ---
+    const htmlEl = document.documentElement;
+    const desktopToggle = document.getElementById('themeToggle');
+    const mobileToggle = document.getElementById('mobileThemeToggle');
+    const toggles = [desktopToggle, mobileToggle].filter(Boolean);
+
+    // Read saved preference or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+
+    function setTheme(theme) {
+        htmlEl.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+
+    setTheme(savedTheme);
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(nextTheme);
+        });
+    });
+
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileNavMenu = document.querySelector('.mobile-nav-menu');
 
@@ -197,6 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     img.src = typeof item === 'string' ? item : item.src;
                     img.alt = typeof item === 'string' ? data.title : item.title;
                     img.className = 'modal-gallery-img';
+                    img.onerror = function() {
+                        this.src = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=80';
+                    };
                     figure.appendChild(img);
                     
                     if (typeof item === 'object' && item.title) {
