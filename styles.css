@@ -3,7 +3,7 @@
    Dual Theme System (Light / Dark Mode) + 3D Glass Morphic Toggle
    Typography: Space Grotesk (Display) + Inter (Body) + JetBrains Mono (Specs)
    Color System: Precision Dark Navy (#070A10) + Electric Cobalt Blue (#3B82F6)
-   Dials: DESIGN_VARIANCE: 7 | MOTION_INTENSITY: 6 | VISUAL_DENSITY: 4
+   Full Mobile Responsive Engine (<768px, <480px)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -345,7 +345,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
     transition: transform 0.45s cubic-bezier(0.34, 1.45, 0.64, 1), background 0.4s ease, border-color 0.4s ease;
     
-    /* Ultra-sleek Glass Lens Effect */
     background: linear-gradient(
         135deg, 
         rgba(255, 255, 255, 0.4) 0%, 
@@ -661,6 +660,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 8px var(--accent);
 }
 
+/* Crystal Clear White Hero Text in BOTH Light and Dark Modes */
 .hero h1 {
     font-size: 2.75rem;
     line-height: 1.1;
@@ -1524,4 +1524,388 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE ENGINE (<991px, <768px, <480px)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .section {
+        padding: 70px 0;
+    }
+    .about-grid, .why-us-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 55px 0;
+    }
+    
+    .section-title {
+        font-size: 1.85rem;
+        margin-bottom: 12px;
+    }
+    
+    .section-desc {
+        font-size: 0.98rem;
+        margin-bottom: 32px;
+    }
+    
+    /* Header & Mobile Bar */
+    .site-header {
+        height: 68px;
+    }
+    
+    .mobile-nav-menu {
+        top: 68px;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .header-actions .btn-primary {
+        display: none; /* Secondary desktop quote button hidden to prevent header bar crowding */
+    }
+    
+    .header-actions .glass-theme-toggle {
+        display: flex;
+        width: 92px;
+        height: 38px;
+        padding: 3px 6px;
+    }
+    
+    .glass-knob {
+        width: 36px;
+        height: 30px;
+        top: 3px;
+        left: 3px;
+    }
+    
+    [data-theme="dark"] .glass-knob {
+        transform: translateX(48px);
+    }
+    
+    .toggle-track-text {
+        font-size: 0.72rem;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 36px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+    }
+
+    .logo-subtext {
+        font-size: 0.58rem;
+    }
+
+    /* Hero Mobile Refinement */
+    .hero {
+        padding-top: 104px;
+        padding-bottom: 48px;
+        min-height: auto;
+    }
+
+    .badge {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+        margin-bottom: 16px;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem !important;
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .hero p {
+        font-size: 0.98rem !important;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+
+    .trust-signal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: 16px;
+        font-size: 0.82rem;
+    }
+
+    /* Ticker Grid Mobile */
+    .metrics-ticker-bar {
+        padding: 16px 0;
+    }
+
+    .ticker-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .ticker-item {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .ticker-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .ticker-val {
+        font-size: 1.05rem;
+    }
+
+    .ticker-lbl {
+        font-size: 0.65rem;
+    }
+
+    /* About Section Mobile */
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-box {
+        padding: 20px 14px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.72rem;
+    }
+
+    /* Services / Bento Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card, 
+    .service-card:nth-child(1), 
+    .service-card:nth-child(4) {
+        grid-column: span 1;
+        min-height: auto;
+    }
+
+    .service-img {
+        height: 160px;
+    }
+
+    .service-content {
+        padding: 18px;
+    }
+
+    .service-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-content p {
+        font-size: 0.88rem;
+        margin-bottom: 16px;
+    }
+
+    /* Why Choose Us Mobile */
+    .feature-item {
+        margin-top: 16px;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .feature-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .feature-text h4 {
+        font-size: 1.05rem;
+    }
+
+    .feature-text p {
+        font-size: 0.88rem;
+    }
+
+    .why-us-cta .cta-box {
+        padding: 24px 18px;
+    }
+
+    .cta-box h3 {
+        font-size: 1.35rem;
+    }
+
+    /* Clients Mobile */
+    .clients-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .client-category {
+        padding: 20px 18px;
+    }
+
+    .client-category h3 {
+        font-size: 1.1rem;
+    }
+
+    .client-category li {
+        font-size: 0.88rem;
+    }
+
+    /* Contact & Form Mobile */
+    .contact-details {
+        margin-top: 24px;
+        gap: 20px;
+    }
+
+    .contact-details .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .contact-details .text strong {
+        font-size: 0.92rem;
+    }
+
+    .contact-details .text span, 
+    .contact-details .text a {
+        font-size: 0.85rem;
+    }
+
+    .contact-form-container {
+        padding: 24px 18px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.35rem;
+        margin-bottom: 18px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer Mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Service Modal Mobile */
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        padding: 24px 16px;
+        max-height: 92vh;
+        border-radius: 10px;
+    }
+
+    .close-modal {
+        top: 14px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .modal-content .section-title {
+        font-size: 1.35rem;
+        padding-right: 32px;
+    }
+
+    .modal-desc {
+        font-size: 0.88rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .modal-gallery-img {
+        height: 120px;
+        padding: 8px;
+    }
+
+    .gallery-caption {
+        font-size: 0.76rem;
+        padding: 8px 6px;
+    }
+
+    .gallery-category-heading {
+        font-size: 1.05rem;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .logo-subtext {
+        display: none; /* Clean single line logo header for small mobile screens */
+    }
+
+    .hero h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .ticker-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .modal-gallery-img {
+        height: 110px;
+        padding: 6px;
+    }
 }
